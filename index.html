@@ -11,11 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* La Tavolozza Editoriale Asiatica / Ghirri */
+        /* La Tavolozza Editoriale */
         :root {
-            --paper-bg: #f5f3ee; /* Colore carta panna/crema caldo */
-            --ink-text: #2c2b29; /* Grigio inchiostro scuro, morbido */
-            --accent-color: #a83824; /* Sigillo rosso cinabro */
+            --paper-bg: #f5f3ee; /* Colore carta panna caldo */
+            --ink-text: #2c2b29; /* Grigio inchiostro */
+            --accent-color: #a83824; /* Rosso cinabro (usato solo per il passaggio su PayPal) */
+            --grey-symbol: #b0aba0; /* Grigio cenere per il sigillo */
             --font-serif: 'EB Garamond', serif;
             --font-mono: 'Courier Prime', monospace;
         }
@@ -31,42 +32,31 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* La Gabbia Tipografica del Libro */
+        /* La Gabbia Tipografica */
         .book-page {
             width: 100%;
-            max-width: 460px; /* Formato stretto, come un tascabile Adelphi o giapponese */
+            max-width: 460px; 
             margin: 10vh 25px 15vh 25px;
-            text-align: center; /* Tutto centrato per l'effetto copertina */
+            text-align: center; 
         }
 
         /* Intestazione */
         header {
-            margin-bottom: 70px;
+            margin-bottom: 120px; /* Dilatato lo spazio vuoto prima del primo numero */
         }
 
         .title {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
+            font-family: var(--font-mono); /* Ripristinato il font macchina da scrivere */
+            font-size: 1.15rem;
+            letter-spacing: 3px;
         }
 
-        .subtitle {
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            color: #666;
-        }
-
-        /* La Fotografia "Francobollo" */
+        /* La Fotografia "Francobollo" specifica per ogni numero */
         .cover-image {
-            width: 65%; /* Mantiene i bordi laterali immensi come nei libri di Ghirri */
+            width: 70%; /* Mantiene i bordi laterali ampi */
             aspect-ratio: 4/3;
-            background-color: #e2dfd6; /* Colore di sfondo se l'immagine non carica */
-            margin: 0 auto 70px auto;
-            /* Se vuoi inserire la tua foto delle nuvole, sblocca il tag <img> qui sotto nell'HTML */
+            background-color: #e2dfd6; /* Colore di sfondo provvisorio */
+            margin: 0 auto 35px auto; /* Distanza tra la foto e il testo dell'estratto */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -84,21 +74,20 @@
         /* Il Sigillo */
         .sigillo {
             font-size: 1.5rem;
-            color: var(--accent-color);
-            margin: 50px 0;
+            color: var(--grey-symbol); /* Sigillo in grigio cenere */
+            margin: 100px 0; /* Dilatato lo spazio tra un numero e l'altro */
         }
 
         /* Struttura dei Numeri */
         .numero {
-            text-align: left; /* Il testo interno torna allineato a sinistra per leggibilità */
-            margin-bottom: 60px;
+            text-align: left; 
         }
 
         .numero-header {
             font-family: var(--font-mono);
             font-size: 0.8rem;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #d0ccc0; /* Riga divisoria color matita */
+            margin-bottom: 30px; /* Spazio tra la data e l'immagine */
+            border-bottom: 1px solid #d0ccc0; 
             padding-bottom: 5px;
             display: flex;
             justify-content: space-between;
@@ -107,8 +96,8 @@
         .estratto {
             font-size: 1.1rem;
             line-height: 1.7;
-            margin-bottom: 20px;
-            text-align: justify; /* Testo giustificato come in un vero libro */
+            margin-bottom: 25px;
+            text-align: justify; 
         }
 
         /* Pulsante / Link di acquisto */
@@ -129,7 +118,7 @@
 
         /* Piè di pagina */
         footer {
-            margin-top: 100px;
+            margin-top: 130px;
             font-size: 0.85rem;
             font-style: italic;
             color: #888;
@@ -141,15 +130,8 @@
     <div class="book-page">
         
         <header>
-            <div class="title">A petits_nuages Θ</div>
-            <div class="subtitle">Ama nesciri</div>
+            <div class="title">petits_nuages</div>
         </header>
-
-        <!-- SPAZIO PER LA FOTO CENTRALE -->
-        <!-- Per inserire la tua foto, sostituisci il div con un tag <img>, es: <img src="link-foto.jpg"> -->
-        <div class="cover-image">
-            [ Immagine / Nuvola ]
-        </div>
 
         <!-- NUMERO 2 -->
         <article class="numero">
@@ -157,13 +139,20 @@
                 <span>numero 2</span>
                 <span>26 settembre 2026</span>
             </div>
+
+            <!-- Immagine del Numero 2 -->
+            <!-- Sostituisci questo div con <img src="tua-foto.jpg"> quando l'avrai caricata -->
+            <div class="cover-image">
+                [ Nuvola 2 ]
+            </div>
+
             <div class="estratto">
                 Per l'era di Michele: ciò che prima era intelligenza cosmica ora discende sulla terra e diviene intelligenza umana, personale. La spada di Michele non cade dal cielo: deve essere forgiata.
             </div>
             <a href="#" class="azione" target="_blank">[ 1,00 € — Leggi ]</a>
         </article>
 
-        <!-- IL SIGILLO -->
+        <!-- IL SIGILLO (Grigio) -->
         <div class="sigillo">⊙</div>
 
         <!-- NUMERO 1 -->
@@ -172,6 +161,13 @@
                 <span>numero 1</span>
                 <span>19 settembre 2026</span>
             </div>
+
+            <!-- Immagine del Numero 1 -->
+            <!-- Sostituisci questo div con <img src="tua-foto.jpg"> quando l'avrai caricata -->
+            <div class="cover-image">
+                [ Nuvola 1 ]
+            </div>
+
             <div class="estratto">
                 Dobbiamo sradicare dall'anima tutta la paura e il terrore di ciò che il futuro può portare all'uomo. Il non volere e il non agire è all'uomo tanto funesto quanto il compiere il male.
             </div>
