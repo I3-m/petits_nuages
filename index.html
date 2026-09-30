@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>petits_nuages</title>
     
-    <!-- Importazione dei font classici da Google Fonts -->
+    <!-- Importazione dei font classici -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* La Tavolozza Minerale e la Gabbia Tipografica */
+        /* La Tavolozza Editoriale Asiatica / Ghirri */
         :root {
-            --bg-color: #121316; /* Grigio ardesia profondo */
-            --text-color: #dcdad5; /* Bianco pietra lunare */
-            --accent-color: #b34226; /* Rosso ruggine/cinabro */
+            --paper-bg: #f5f3ee; /* Colore carta panna/crema caldo */
+            --ink-text: #2c2b29; /* Grigio inchiostro scuro, morbido */
+            --accent-color: #a83824; /* Sigillo rosso cinabro */
             --font-serif: 'EB Garamond', serif;
             --font-mono: 'Courier Prime', monospace;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--paper-bg);
+            color: var(--ink-text);
             font-family: var(--font-serif);
             margin: 0;
             padding: 0;
@@ -31,117 +31,135 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Formato A5/Tascabile virtuale */
-        .container {
+        /* La Gabbia Tipografica del Libro */
+        .book-page {
             width: 100%;
-            max-width: 500px;
-            margin: 12vh 25px; /* Margini enormi (Ma giapponese) */
+            max-width: 460px; /* Formato stretto, come un tascabile Adelphi o giapponese */
+            margin: 10vh 25px 15vh 25px;
+            text-align: center; /* Tutto centrato per l'effetto copertina */
         }
 
-        /* Testata */
+        /* Intestazione */
         header {
-            text-align: center;
-            margin-bottom: 100px;
-        }
-
-        .logo {
-            font-family: var(--font-mono);
-            font-size: 1.1rem;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-
-        .motto {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            color: #666;
-            text-transform: uppercase;
-        }
-
-        /* Il Sigillo Alchemico Isolato */
-        .sigillo {
-            text-align: center;
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin: 70px 0;
-            font-family: var(--font-serif);
-        }
-
-        /* Struttura del singolo numero */
-        .numero {
             margin-bottom: 70px;
+        }
+
+        .title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            color: #666;
+        }
+
+        /* La Fotografia "Francobollo" */
+        .cover-image {
+            width: 65%; /* Mantiene i bordi laterali immensi come nei libri di Ghirri */
+            aspect-ratio: 4/3;
+            background-color: #e2dfd6; /* Colore di sfondo se l'immagine non carica */
+            margin: 0 auto 70px auto;
+            /* Se vuoi inserire la tua foto delle nuvole, sblocca il tag <img> qui sotto nell'HTML */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+        
+        .cover-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Il Sigillo */
+        .sigillo {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin: 50px 0;
+        }
+
+        /* Struttura dei Numeri */
+        .numero {
+            text-align: left; /* Il testo interno torna allineato a sinistra per leggibilità */
+            margin-bottom: 60px;
         }
 
         .numero-header {
             font-family: var(--font-mono);
-            font-size: 0.85rem;
-            color: var(--text-color);
-            margin-bottom: 20px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 8px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #d0ccc0; /* Riga divisoria color matita */
+            padding-bottom: 5px;
             display: flex;
             justify-content: space-between;
         }
 
-        .numero-data {
-            color: var(--accent-color);
-        }
-
         .estratto {
-            font-size: 1.15rem;
-            line-height: 1.6;
-            text-align: left; /* Allineamento a bandiera (non giustificato) per respiro */
-            margin-bottom: 25px;
-            color: #b0aba0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            text-align: justify; /* Testo giustificato come in un vero libro */
         }
 
-        /* Pulsante PayPal essenziale */
+        /* Pulsante / Link di acquisto */
         .azione {
             font-family: var(--font-mono);
             display: inline-block;
             text-decoration: none;
-            color: var(--bg-color);
-            background-color: var(--text-color);
-            padding: 6px 16px;
-            font-size: 0.85rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            color: var(--paper-bg);
+            background-color: var(--ink-text);
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            transition: background-color 0.3s ease;
         }
 
         .azione:hover {
             background-color: var(--accent-color);
-            color: var(--text-color);
         }
 
-        /* Piè di pagina clandestino */
+        /* Piè di pagina */
         footer {
-            margin-top: 120px;
-            text-align: center;
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            color: #444;
+            margin-top: 100px;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #888;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="book-page">
         
         <header>
-            <div class="logo">A &nbsp; petits_nuages &nbsp; Θ</div>
-            <div class="motto">Ama nesciri</div>
+            <div class="title">A petits_nuages Θ</div>
+            <div class="subtitle">Ama nesciri</div>
         </header>
+
+        <!-- SPAZIO PER LA FOTO CENTRALE -->
+        <!-- Per inserire la tua foto, sostituisci il div con un tag <img>, es: <img src="link-foto.jpg"> -->
+        <div class="cover-image">
+            [ Immagine / Nuvola ]
+        </div>
 
         <!-- NUMERO 2 -->
         <article class="numero">
             <div class="numero-header">
                 <span>numero 2</span>
-                <span class="numero-data">26 settembre 2026</span>
+                <span>26 settembre 2026</span>
             </div>
             <div class="estratto">
                 Per l'era di Michele: ciò che prima era intelligenza cosmica ora discende sulla terra e diviene intelligenza umana, personale. La spada di Michele non cade dal cielo: deve essere forgiata.
             </div>
-            <!-- Incolla qui il link di PayPal al posto di # -->
             <a href="#" class="azione" target="_blank">[ 1,00 € — Leggi ]</a>
         </article>
 
@@ -152,12 +170,11 @@
         <article class="numero">
             <div class="numero-header">
                 <span>numero 1</span>
-                <span class="numero-data">19 settembre 2026</span>
+                <span>19 settembre 2026</span>
             </div>
             <div class="estratto">
                 Dobbiamo sradicare dall'anima tutta la paura e il terrore di ciò che il futuro può portare all'uomo. Il non volere e il non agire è all'uomo tanto funesto quanto il compiere il male.
             </div>
-            <!-- Incolla qui il link di PayPal al posto di # -->
             <a href="#" class="azione" target="_blank">[ 1,00 € — Leggi ]</a>
         </article>
 
